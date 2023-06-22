@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>获取qq昵称和头像</title>
+  </head>
+  <style>
+  .hh{
+  width:100vw;
+  height:100vh;
+  text-align:center;
+    }
+  .hh img{
+    height:100px;
+    width:100px;
+    }
+  body{
+    background-color:gray;
+    }
+  .ss{
+  margin-top:48vw;  
+    }
+  </style>
+  <body>
+  <hr class="ss">	
+<div class="hh">	
+ <img src=""/>
+ <hr class="xx">
+ <h2>昵称</h2>
+ <hr>
+ </div>
+ <script>
+let a=prompt("qq号码")
+ let qq=a
+ let tx=document.querySelector("img")
+ tx.src="http://q2.qlogo.cn/headimg_dl?dst_uin="+qq+"&spec=100"
+ let s=document.createElement("script")
+ s.src="http://users.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins="+qq
+ document.body.appendChild(s) 
+ function portraitCallBack(e){
+ let h2  =document.querySelector("h2")
+     h2.innerText=e[qq][6]     
+     } 
+ </script>
+  </body>
+</html>
